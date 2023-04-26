@@ -32,8 +32,9 @@ const RegistrationScreen = () => {
           email,
           fullName,
         };
+        const document_User = doc(db, "usuarios", data.id);
         // guarda en firestore, en la coleccion usuarios, el usuario con el documento id
-        setDoc(doc(db, "usuarios", data.id), data);
+        setDoc(document_User, data);
         navigation.navigate("Home", { user: data });
       })
       .catch(error => alert(error));
