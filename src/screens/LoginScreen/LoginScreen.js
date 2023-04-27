@@ -11,6 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import styles from "./styles";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const LoginScreen = () => {
   const navigation = useNavigation();
@@ -25,9 +26,6 @@ const LoginScreen = () => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then(response => {
-        const uid = response.user.uid;
-        const user = response.user;
-
         navigation.navigate("Home");
       })
       .catch(error => {
@@ -36,7 +34,7 @@ const LoginScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <KeyboardAwareScrollView
         style={{ flex: 1, width: "100%" }}
         keyboardShouldPersistTaps="always">
@@ -77,7 +75,7 @@ const LoginScreen = () => {
           </Text>
         </View>
       </KeyboardAwareScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

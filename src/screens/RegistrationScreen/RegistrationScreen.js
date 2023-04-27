@@ -6,6 +6,7 @@ import styles from "./styles";
 import { app, auth, db } from "../../firebase/config";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { SafeAreaView } from "react-native-safe-area-context";
 const RegistrationScreen = () => {
   const navigation = useNavigation();
 
@@ -40,7 +41,7 @@ const RegistrationScreen = () => {
       .catch(error => alert(error));
   };
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <KeyboardAwareScrollView
         style={{ flex: 1, width: "100%" }}
         keyboardShouldPersistTaps="always">
@@ -104,7 +105,7 @@ const RegistrationScreen = () => {
           </View>
         </TouchableOpacity>
       </KeyboardAwareScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
