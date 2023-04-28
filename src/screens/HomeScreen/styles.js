@@ -1,9 +1,12 @@
 import { StyleSheet } from "react-native";
 
-export default styles = StyleSheet.create({
+export default StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: "center",
+    padding: 20,
+  },
+  title: {
+    fontSize: 22,
   },
   input: {
     height: 48,

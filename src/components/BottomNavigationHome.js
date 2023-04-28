@@ -8,7 +8,7 @@ const Tab = createBottomTabNavigator();
 
 const BottomNavigationHome = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen name="HomeScreen" component={HomeScreen} />
       <Tab.Screen name="Historial" component={HistorialScreen} />
     </Tab.Navigator>
